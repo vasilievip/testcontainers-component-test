@@ -13,15 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.demo;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+package com.example.demo.service;
 
-@SpringBootApplication
-public class DemoApplication {
+import com.example.demo.domain.City;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
-    public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
-    }
+import java.util.Optional;
+
+public interface CityService {
+
+	Page<City> findCities(CitySearchCriteria criteria, Pageable pageable);
+
+	Optional<City> getCity(String name, String country);
+
 }

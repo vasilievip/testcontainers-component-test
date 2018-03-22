@@ -13,15 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.demo;
+package com.example.demo.persistence;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import com.example.demo.domain.City;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.repository.Repository;
 
-@SpringBootApplication
-public class DemoApplication {
+public interface CityRepository extends Repository<City, Long> {
 
-    public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
-    }
+    Page<City> findAll(Pageable pageable);
+
+    Page<City> findByNameContainingAndCountryContainingAllIgnoringCase(String name,
+                                                                       String country, Pageable pageable);
+
+    City findByNameAndCountryAllIgnoringCase(String name, String country);
+
 }

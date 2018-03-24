@@ -53,10 +53,9 @@ public class CityServiceComponentSpringIT {
         assertThat(cities).isNotNull();
         assertThat(cities.size()).isGreaterThan(0);
 
-        log.error("------------------------");
-        log.error(cities.toString());
-        log.error("------------------------");
-
+        log.trace("------------------------");
+        log.trace(cities.toString());
+        log.trace("------------------------");
     }
 
     @Configuration

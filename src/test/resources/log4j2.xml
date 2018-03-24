@@ -2,12 +2,12 @@
 <Configuration shutdownHook="disable">
     <Appenders>
         <Console name="console" target="SYSTEM_OUT">
-            <PatternLayout pattern="%highlight{[%d{MM/dd/yyyy HH:mm:ss:SSS z}] %-5level %c{1}: %m}{WARN=Red, INFO=blue, DEBUG=Cyan, TRACE=Yellow}%n"/>
+            <PatternLayout pattern="%highlight{[%d{MM/dd/yyyy HH:mm:ss:SSS z}] %-5level %c{1}: %m}{WARN=Red, INFO=blue, DEBUG=Gray, TRACE=Green}%n"/>
         </Console>
     </Appenders>
     <Loggers>
-        <Logger name="com.playtika" level="info"/>
-        <Root level="info">
+        <Logger name="com.example" level="trace"/>
+        <Root level="error">
             <AppenderRef ref="console"/>
         </Root>
     </Loggers>

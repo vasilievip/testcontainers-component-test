@@ -6,7 +6,7 @@
         </Console>
     </Appenders>
     <Loggers>
-        <Logger name="com.playtika" level="info"/>
+        <Logger name="com.example" level="info"/>
         <Root level="info">
             <AppenderRef ref="console"/>
         </Root>

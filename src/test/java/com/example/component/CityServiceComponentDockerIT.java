@@ -44,9 +44,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 @Slf4j
 @RunWith(SpringRunner.class)
 @ActiveProfiles("componentDocker")
-@AutoConfigureMockMvc
 @SpringBootTest(
-        webEnvironment = WebEnvironment.MOCK,
+        webEnvironment = WebEnvironment.NONE,
         classes = CityServiceComponentDockerIT.TestConfig.class
 )
 public class CityServiceComponentDockerIT {
@@ -100,14 +99,14 @@ public class CityServiceComponentDockerIT {
             return (OutputFrame outputFrame) -> {
                 switch (outputFrame.getType()) {
                     case STDERR:
-                        log.error(outputFrame.getUtf8String());
+                        System.err.println(outputFrame.getUtf8String());
                         break;
                     case STDOUT:
                     case END:
-                        log.info(outputFrame.getUtf8String());
+                        System.out.println(outputFrame.getUtf8String());
                         break;
                     default:
-                        log.info(outputFrame.getUtf8String());
+                        System.out.println(outputFrame.getUtf8String());
                         break;
                 }
             };

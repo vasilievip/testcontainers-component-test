@@ -42,7 +42,7 @@ public class DefaultCityService implements CityService {
         String name = criteria.getName();
 
         if (!StringUtils.hasLength(name)) {
-            return this.cityRepository.findAll(null);
+            return this.cityRepository.findAll(Pageable.unpaged());
         }
 
         String country = "";

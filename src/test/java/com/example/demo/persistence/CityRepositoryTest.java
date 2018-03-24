@@ -41,14 +41,14 @@ public class CityRepositoryTest {
 
     @Test
     public void findAll() throws Exception {
-        Page<City> all = repository.findAll(new PageRequest(0, 1));
+        Page<City> all = repository.findAll(PageRequest.of(0, 1));
 
         assertThat(all.getNumberOfElements()).isEqualTo(1);
     }
 
     @Test
     public void findByNameContainingAndCountryContainingAllIgnoringCase() throws Exception {
-        PageRequest onePageRequest = new PageRequest(0, 1);
+        PageRequest onePageRequest = PageRequest.of(0, 1);
         Page<City> result = repository.findByNameContainingAndCountryContainingAllIgnoringCase("Tel Aviv", "Israel", onePageRequest);
 
         assertThat(result.getNumberOfElements()).isEqualTo(1);

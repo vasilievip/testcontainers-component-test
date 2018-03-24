@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration shutdownHook="disable">
+    <Appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%highlight{[%d{MM/dd/yyyy HH:mm:ss:SSS z}] %-5level %c{1}: %m}{WARN=Red, INFO=blue, DEBUG=Cyan, TRACE=Yellow}%n"/>
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="com.playtika" level="info"/>
+        <Root level="info">
+            <AppenderRef ref="console"/>
+        </Root>
+    </Loggers>
+</Configuration>

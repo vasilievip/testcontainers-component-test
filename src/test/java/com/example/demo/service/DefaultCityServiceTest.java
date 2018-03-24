@@ -26,7 +26,6 @@ import org.mockito.runners.MockitoJUnitRunner;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 
 import java.util.Collections;
 import java.util.Optional;
@@ -53,7 +52,7 @@ public class DefaultCityServiceTest {
 
         PageImpl<City> emptyList = new PageImpl<>(Collections.emptyList());
 
-        when(cityRepository.findAll(any(Pageable.class)))
+        when(cityRepository.findAll(any()))
                 .thenReturn(emptyList);
 
         CitySearchCriteria emptyCriteria = new CitySearchCriteria();
@@ -74,7 +73,6 @@ public class DefaultCityServiceTest {
 
         Optional<City> city = cityService.getCity("name", "country");
 
-        assertThat(city).isNotNull();
         assertThat(city.isPresent()).isTrue();
         assertThat(city.get().getName()).isEqualTo("example");
     }

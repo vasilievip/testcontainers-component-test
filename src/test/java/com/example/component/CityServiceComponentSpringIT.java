@@ -24,8 +24,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -37,8 +35,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SpringRunner.class)
 @SpringBootTest(
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
-        , classes = DemoApplication.class
-        , properties = "embedded.mariadb.enabled=false")
+        , classes = DemoApplication.class)
 @ActiveProfiles("componentSpring")
 @AutoConfigureTestDatabase
 public class CityServiceComponentSpringIT {
@@ -56,14 +53,5 @@ public class CityServiceComponentSpringIT {
         log.trace("------------------------");
         log.trace(cities.toString());
         log.trace("------------------------");
-    }
-
-    @Configuration
-    public static class Config {
-
-        @Bean
-        public String embeddedMariaDb() {
-            return "embeddedMariaDb";
-        }
     }
 }

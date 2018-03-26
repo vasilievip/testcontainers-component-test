@@ -20,7 +20,7 @@
     <properties>
         <awaitility.version>1.7.0</awaitility.version>
         <spring-cloud-starter.version>2.0.0.M9</spring-cloud-starter.version>
-        <embedded-mariadb.version>1.5</embedded-mariadb.version>
+        <embedded-mariadb.version>1.6</embedded-mariadb.version>
         <mariadb-driver.version>2.1.2</mariadb-driver.version>
         <testcontainers.version>1.6.0</testcontainers.version>
         <docker-java.version>3.0.14</docker-java.version>

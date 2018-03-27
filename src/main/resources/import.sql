@@ -1,3 +1,4 @@
+-- https://docs.spring.io/spring-boot/docs/current/reference/html/howto-database-initialization.html --
 insert into city(id, country, name, state, map) values (1, 'Australia', 'Brisbane', 'Queensland', '-27.470933, 153.023502')
 insert into city(id, country, name, state, map) values (2, 'Australia', 'Melbourne', 'Victoria', '-37.813187, 144.96298')
 insert into city(id, country, name, state, map) values (3, 'Australia', 'Sydney', 'New South Wales', '-33.868901, 151.207091')

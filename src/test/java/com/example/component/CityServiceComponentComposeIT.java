@@ -54,6 +54,7 @@ public class CityServiceComponentComposeIT {
     @ClassRule
     public static DockerComposeContainer stageEnvironment = new DockerComposeContainer(composeFile)
             .withPull(false)
+            .withLocalCompose(true)
             .withExposedService("myservice", 8080)
             .withExposedService("mariadb", 3306);
 
